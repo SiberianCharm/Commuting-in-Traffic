@@ -70,18 +70,18 @@ HHH.LoadQuestion = function(questionID){
 	var question = jlinq.from(HHH.Data.questions)
 	.equals("ID", questionID.toString())
 	.select();
-	console.log(HHH.Data.questions);
-	console.log(HHH.Data.questions[0].question);
-	$("#question").val('<div class="inside clearfix"><p class="large heading">' + question.question_heading + "</p><p>" + question.content + "</p></div>");
+	$("#question").html('<div class="inside clearfix"><p class="large heading">' + question[0].question_heading + '</p><p>' + question[0].question_content + '</p></div>');
 }
 
 HHH.LoadOptions = function(questionID){
-	var options = jlinq.from(HHH.Data.options)
-	.equals("option_question", questionID)
+	var option = jlinq.from(HHH.Data.options)
+	.equals("option_question", questionID.toString())
 	.select();
-	for(i=0; i < options.length; i++)
+	$("#options").html("");
+	for(i=0; i < option.length; i++)
 	{
-		$("#options").val('<div id="opt_'+ option.option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' + option.name + '</span> <br />' + option.about + '</div>' );
+		console.log("you are in here", option[i].option_name);
+		$("#options").append('<div id="opt_'+ option[i].option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
 	}
 }
 
