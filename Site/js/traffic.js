@@ -13,8 +13,8 @@ HHH.LoadGame = function(){
 }
 
 HHH.OptionClick = function(){
-	var nextQuestionID = $(this).id().split("_")[1];
-	
+	var nextQuestionID = this.id.split("_")[1];
+	HHH.PopulatePage(nextQuestionID);
 }
 
 
@@ -81,7 +81,8 @@ HHH.LoadOptions = function(questionID){
 	for(i=0; i < option.length; i++)
 	{
 		console.log($("#question").children(".options"));
-		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + '" class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
+		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + '" class="button"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
+		$("#opt_" + option[i].option_next_question).live("click", HHH.OptionClick);
 	}
 }
 
