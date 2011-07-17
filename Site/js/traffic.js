@@ -87,7 +87,7 @@ HHH.setIcon = function(locationID){
 		var location = jlinq.from(HHH.Data.locations)
 		.equals("ID", locationID)
 		.select();
-		$("#icon").html("<img src='" + location[0].location_icon + ">");
+		$("#icon").html("<img src='style/images/icons/big/" + location[0].location_icon + ">");
 }
 
 HHH.LoadOptions = function(questionID){
