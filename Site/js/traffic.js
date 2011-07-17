@@ -70,7 +70,7 @@ HHH.LoadQuestion = function(questionID){
 	var question = jlinq.from(HHH.Data.questions)
 	.equals("ID", questionID.toString())
 	.select();
-	$("#question").html('<div class="inside clearfix"><p class="large heading">' + question[0].question_heading + '</p><p>' + question[0].question_content + '</p></div>');
+	$("#question").html('<div class="inside clearfix"><p class="large heading">' + question[0].question_heading + '</p><p>' + question[0].question_content + '</p></div><div class="options"></div>');
 }
 
 HHH.LoadOptions = function(questionID){
@@ -80,8 +80,8 @@ HHH.LoadOptions = function(questionID){
 	$("#options").html("");
 	for(i=0; i < option.length; i++)
 	{
-		console.log("you are in here", option[i].option_name);
-		$("#options").append('<div id="opt_'+ option[i].option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
+		console.log($("#question").children(".options"));
+		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + ' class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
 	}
 }
 
@@ -89,7 +89,8 @@ HHH.LoadFact = function(questionID){
 	var fact = jlinq.from(HHH.Data.facts)
 	.equals("fact_question", questionID)
 	.select();
-	$(".inside").children("p").val(fact.anecdote);
+	console.log(fact[0].fact_did_you_know_short);
+	$("#fact").children("div").children()[2].value = fact[0].fact_did_you_know_short;
 }
 
 //Google Analytics tracking

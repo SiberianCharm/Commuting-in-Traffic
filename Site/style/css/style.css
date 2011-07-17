@@ -36,11 +36,11 @@ GREEN: #8CC63F
 
 @font-face {
     font-family: 'LeagueGothicRegular';
-    src: url('../fonts/League_Gothic-webfont.eot');
-    src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/League_Gothic-webfont.woff') format('woff'),
-         url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
-         url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    src: url('fonts/League_Gothic-webfont.eot');
+    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/League_Gothic-webfont.woff') format('woff'),
+         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -87,9 +87,10 @@ input:valid,
 textarea:valid   	{  }
 
 .button{ background: #D4145A; color: #fff; text-align: center; width: 46%; float: left; margin: 0 2% 0 3%; font-size: .9em; line-height: 15px; padding: 10px 0 15px; }
-.button.last{ margin-left: 0; width: 46%}
-.button span{ text-transform: uppercase; font: 1.8em "LeagueGothicRegular", "Arial Narrow", sans-serif; letter-spacing: .05em; }
-
+.button + .button { margin-left: 0; width: 46%}
+.button span{ text-transform: uppercase; font: 1.8em "LeagueGothicRegular", "Arial Narrow", sans-serif; letter-spacing: .05em; text-shadow: 1px 0 2px rgba(0,0,0,.3); position: relative; }
+.button:hover{ background: #b11046; cursor: pointer; }
+.button:active span{ top: 1px; }
 
 /*		BLOCKS
 ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -110,17 +111,23 @@ body	{  }
 
 /* 	Header & Nav
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-header{ position: fixed; bottom: 0; height: 40px; line-height: 40px; width: 100%; background: #E6E6E6; color: #000; margin:0; }
+header{ position: fixed; top: 0; height: 40px; line-height: 40px; width: 100%; background: #E6E6E6; color: #000; margin:0; }
 header h1{ width: 30%; margin:0 3% 0 0; font-size: 1.2em; float: left; text-indent: 10px; }
 header nav{ width: 30%; margin-right: 3%; float: left; text-align: center; }
 header nav li{ display: inline-block; width: 15%; }
 header #user{ width: 33%; float: left; text-align: right;  }
 
+header #icon1{ background: url('../images/icon1-sm.jpg')}
+header #icon2{ background: url('../images/icon2-sm.jpg')}
+header #icon3{ background: url('../images/icon3-sm.jpg')}
+header #icon4{ background: url('../images/icon4-sm.jpg')}
+header #icon5{ background: url('../images/icon5-sm.jpg')}
+header #icon6{ background: url('../images/icon6-sm.jpg')}
 
 /* 	Container
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-#container{ padding: 1%; max-width: 960px; margin: 40px auto 0; background: /*#fffrgba(255,255,255, .3);*/ }
+#container{ padding: 1%; max-width: 960px; margin: 40px auto 0; }
 
 /* Icon */
 #icon { width: 32%; margin: 0 1% 1% 0; display: block; float: left; }
@@ -143,15 +150,28 @@ header #user{ width: 33%; float: left; text-align: right;  }
 
 /* 	Footer
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-footer{ background: url(../images/base.jpg) bottom center; margin: 0 -100px; min-height: 700px; margin-top: 45px; padding-top: 15px; text-align: center; color: #ccc; }
+footer{  margin-top: 45px; padding-top: 15px; text-align: center; color: #ccc; }
 footer small{ display: none; }
 
 
 
 /* 	LATE NIGHT CHANGES
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-header{ background: #000; color: #FBB03B; height: 60px; line-height: 60px; font-size: 2em;  }
-header nav ul { font: .5em/60px georgia !important;}
+
+#container{ margin-top: 60px; }
+header{ background: #000; color: #333b3e; bottom: 0; top: auto; height: 45px; line-height: 45px; font-size: 1.3em; border-top: 1px solid #222; }
+header div{ width: 980px; margin: 0 auto; }
+header nav {float: right; }
+header nav ul { font: .5em/45px georgia !important;}
+header nav ul li{ background: #111; -webkit-border-radius: 25px; line-height: 25px; width: 25px; }
+header #user{ display; }
+body{ background: url(../images/base-2.jpg) center -40px no-repeat; min-height: 700px; /*max-width: 1300px;*/ padding-top: 0px;}
+
+#intro{ background: #fff; width: 60%; margin:80px auto; }
+#intro{ background: transparent; color: #fff; }
+#intro .large{ font-size: 2.2em; margin-bottom: 20px}
+#intro .options{ margin: 60px auto 0; padding-right: 40px; float: none; width: 46%; }
+#intro .options #opt_1{ width: 100%; }
 
 /* 	Misc Classes
 ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
