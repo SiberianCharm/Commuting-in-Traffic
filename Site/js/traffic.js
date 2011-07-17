@@ -88,7 +88,12 @@ HHH.LoadOptions = function(questionID){
 	.select();
 	for(i=0; i < options.length; i++)
 	{
+<<<<<<< HEAD
 		$(".options").append('<div id="opt_'+ option.option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' option.name + '</span> <br />' + option.about + '</div>' );
+=======
+		console.log($("#question").children(".options"));
+		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + '" class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
+>>>>>>> 7340001211a38f78a618018f40b1d4d7e0595f70
 	}
 }
 
@@ -96,11 +101,17 @@ HHH.LoadFact = function(questionID){
 	var fact = jlinq.from(HHH.Data.facts)
 	.equals("fact_question", questionID)
 	.select();
+<<<<<<< HEAD
 	$(".inside").children("p").val(fact.anecdote);
 }
 
 HHH.getProgress = function (questionID){
 	var progressIcon = 
+=======
+	console.log(fact[0].fact_did_you_know_short);
+	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short;
+	$("#fact_image").attr("src", fact[0].fact_thumbnail);
+>>>>>>> 7340001211a38f78a618018f40b1d4d7e0595f70
 }
 
 //Google Analytics tracking
