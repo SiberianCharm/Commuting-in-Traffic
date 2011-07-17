@@ -115,6 +115,7 @@ HHH.LoadFact = function(factID){
 	$("#fact_anectdote_header").next("p").html(fact[0].fact_anecdote);
 	$("#fact_image_learnmore").next("p").val(fact[0].fact_did_you_know_long);
 	$("#fact_image_learnmore").attr("src", fact[0].fact_image);
+	$("#twitter_link").attr("href","http://www.twitter.com/home?status={0}:+http://commutingintraffic.com".replace("{0}", fact[0].fact_did_you_know_short.replace(' ', '+'));
 	$(".heading.learn_more").html(fact[0].fact_did_you_know_short);
 	$( "#show_modal" ).live("click", function() {
 		$( "#dialog" ).dialog( "open" );
