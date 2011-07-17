@@ -51,12 +51,12 @@ HHH.MouseOverMenu = function(){
 	});
 }
 
-HHH.Transition = function(){
+/*HHH.Transition = function(){
 //Transition animation
 	$(".photo").fadeOut();
 	$(".photo").attr("src", "new url");
 	$(".photo").fadeIn();
-}
+} */
 
 
 HHH.PopulatePage = function(questionID){
@@ -68,8 +68,10 @@ HHH.PopulatePage = function(questionID){
 
 HHH.LoadQuestion = function(questionID){
 	var question = jlinq.from(HHH.Data.questions)
-	.equals("ID", questionID)
+	.equals("ID", questionID.toString())
 	.select();
+	console.log(HHH.Data.questions);
+	console.log(HHH.Data.questions[0].question);
 	$("#question").val('<div class="inside clearfix"><p class="large heading">' + question.question_heading + "</p><p>" + question.content + "</p></div>");
 }
 
@@ -79,7 +81,7 @@ HHH.LoadOptions = function(questionID){
 	.select();
 	for(i=0; i < options.length; i++)
 	{
-		$(".options").append('<div id="opt_'+ option.option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' option.name + '</span> <br />' + option.about + '</div>' );
+		$("#options").val('<div id="opt_'+ option.option_next_question + 'class="button" onclick="HHH.OptionClick"><span>' + option.name + '</span> <br />' + option.about + '</div>' );
 	}
 }
 
