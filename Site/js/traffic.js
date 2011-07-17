@@ -108,7 +108,7 @@ HHH.LoadFact = function(factID){
 	.equals("ID", factID)
 	.select();
 	console.log(fact[0].fact_did_you_know_short);
-	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short + ' <button class="button heading" id="show_modal">Learn more</button>';
+	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short + ' <br /><br/><button class="button heading" id="show_modal">Learn more</button>';
 	$("#fact_image").attr("src", fact[0].fact_thumbnail);
 	console.log(fact[0].fact_anecdote_header, fact[0].fact_anecdote)
 	$("#fact_anectdote_header").html(fact[0].fact_anecdote_header);

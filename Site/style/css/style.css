@@ -151,7 +151,7 @@ header #icon6.icon-on{ background: url('../images/icon6-sm.gif')}
 #fact .inside{ margin: 0 20px; }
 #fact h2{ color: #D4145A; line-height: 60px; }
 #fact img{ max-width: 33%; margin-left: 1%; float: right;}
-#fact .button.heading{ font-size: 1.2em; margin-bottom: 20px; padding-top: 18px; width: 180px; text-shadow: 1px 0 0 rgba(0,0,0,.3)}
+#fact .button.heading{ font-size: 1.2em; margin-bottom: 20px; padding-top: 18px; width: 180px; text-shadow: 1px 0 0 rgba(0,0,0,.3); border:0}
 #fact .button.heading:hover{ color: #fff; }
 
 /* 	Footer
