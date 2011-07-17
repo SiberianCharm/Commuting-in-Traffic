@@ -81,7 +81,7 @@ HHH.LoadOptions = function(questionID){
 	for(i=0; i < option.length; i++)
 	{
 		console.log($("#question").children(".options"));
-		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + ' class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
+		$("#question").children(".options").append('<div id="opt_'+ option[i].option_next_question + '" class="button" onclick="HHH.OptionClick"><span>' + option[i].option_name + '</span> <br />' + option[i].option_about + '</div>' );
 	}
 }
 
@@ -90,7 +90,8 @@ HHH.LoadFact = function(questionID){
 	.equals("fact_question", questionID)
 	.select();
 	console.log(fact[0].fact_did_you_know_short);
-	$("#fact").children("div").children()[2].value = fact[0].fact_did_you_know_short;
+	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short;
+	$("#fact_image").attr("src", fact[0].fact_thumbnail);
 }
 
 //Google Analytics tracking

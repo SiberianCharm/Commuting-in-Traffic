@@ -36,11 +36,11 @@ GREEN: #8CC63F
 
 @font-face {
     font-family: 'LeagueGothicRegular';
-    src: url('fonts/League_Gothic-webfont.eot');
-    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/League_Gothic-webfont.woff') format('woff'),
-         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
-         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    src: url('../fonts/League_Gothic-webfont.eot');
+    src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/League_Gothic-webfont.woff') format('woff'),
+         url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -86,8 +86,9 @@ input#submit:hover	{ color: yellow; }
 input:valid, 
 textarea:valid   	{  }
 
-.button{ background: #D4145A; color: #fff; text-align: center; width: 46%; float: left; margin: 0 2% 0 3%; font-size: .9em; line-height: 15px; padding: 10px 0 15px; }
-.button + .button { margin-left: 0; width: 46%}
+.button{ background: #D4145A; color: #fff; text-align: center; width: 30%; float: left; margin: 0 2% 0 0; font-size: .9em; line-height: 15px; padding: 10px 0 15px; }
+.options div:first-child{ margin-left: 5%; }
+.options div:last-child{ margin-left: 0; width: 29%}
 .button span{ text-transform: uppercase; font: 1.8em "LeagueGothicRegular", "Arial Narrow", sans-serif; letter-spacing: .05em; text-shadow: 1px 0 2px rgba(0,0,0,.3); position: relative; }
 .button:hover{ background: #b11046; cursor: pointer; }
 .button:active span{ top: 1px; }
@@ -117,12 +118,12 @@ header nav{ width: 30%; margin-right: 3%; float: left; text-align: center; }
 header nav li{ display: inline-block; width: 15%; }
 header #user{ width: 33%; float: left; text-align: right;  }
 
-header #icon1{ background: url('../images/icon1-sm.jpg')}
-header #icon2{ background: url('../images/icon2-sm.jpg')}
-header #icon3{ background: url('../images/icon3-sm.jpg')}
-header #icon4{ background: url('../images/icon4-sm.jpg')}
-header #icon5{ background: url('../images/icon5-sm.jpg')}
-header #icon6{ background: url('../images/icon6-sm.jpg')}
+#q1 header #icon1{ background: url('../images/icon1-sm.jpg')}
+#q2 header #icon2{ background: url('../images/icon2-sm.jpg')}
+#q3 header #icon3{ background: url('../images/icon3-sm.jpg')}
+#q4 header #icon4{ background: url('../images/icon4-sm.jpg')}
+#q5 header #icon5{ background: url('../images/icon5-sm.jpg')}
+#q6 header #icon6{ background: url('../images/icon6-sm.jpg')}
 
 /* 	Container
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -134,8 +135,8 @@ header #icon6{ background: url('../images/icon6-sm.jpg')}
 #icon img{ float: left; }
 
 /* Question */
-#question{ background: #fff; position: relative; /*padding-bottom: 90px;*/ height: 307px; }
-#question .inside{  }
+#question{ background: #fff; position: relative;  height: 307px; }
+#question .inside{ padding-bottom: 90px; }
 #question p{ margin-left: 2%; }
 #question .large{ font-size: 2em;  margin-top: 15px; margin-bottom: 20px; }
 #question .options{ position:absolute; bottom: 0; width: 100%; margin: 0 0px 20px -10px;}
@@ -154,6 +155,11 @@ footer{  margin-top: 45px; padding-top: 15px; text-align: center; color: #ccc; }
 footer small{ display: none; }
 
 
+/* 	Landing
+---------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/*#landing #container{ background: url("../images/loading2.gif") center center no-repeat; }*/
+
 
 /* 	LATE NIGHT CHANGES
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -167,6 +173,10 @@ header nav ul li{ background: #111; -webkit-border-radius: 25px; line-height: 25
 header #user{ display; }
 body{ background: url(../images/base-2.jpg) center -40px no-repeat; min-height: 700px; /*max-width: 1300px;*/ padding-top: 0px;}
 
+
+/* 	INTRO
+---------------------------------------------------------------------------------------------------------------------------------------------------- */
+#landing #container{ margin-top: 0; }
 #intro{ background: #fff; width: 60%; margin:80px auto; }
 #intro{ background: transparent; color: #fff; }
 #intro .large{ font-size: 2.2em; margin-bottom: 20px}
