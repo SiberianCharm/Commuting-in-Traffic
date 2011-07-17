@@ -1,6 +1,3 @@
-
-
-
 HHH = {};
 HHH.Data = {};
 ///URL
@@ -71,6 +68,17 @@ HHH.LoadQuestion = function(questionID){
 	.equals("ID", questionID.toString())
 	.select();
 	$("#question").html('<div class="inside clearfix"><p class="large heading">' + question[0].question_heading + '</p><p>' + question[0].question_content + '</p></div><div class="options"></div>');
+	var location = question[0].question_location;
+	HHH.setIcon(location);
+	//HHH.setProgress(location);
+}
+
+HHH.setIcon = function(locationID){
+		console.log(locationID)
+		var location = jlinq.from(HHH.Data.locations)
+		.equals("ID", locationID)
+		.select();
+		$("#icon").html("<img src='" + location[0].location_icon + ">");
 }
 
 HHH.LoadOptions = function(questionID){
@@ -105,12 +113,5 @@ var _gaq = _gaq || [];
    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
  })();
-
-
-
-
-
-
-
 
 

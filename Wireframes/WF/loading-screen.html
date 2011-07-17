@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Loading Screen</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<style type="text/css">
+/*class for invisible divs*/
+  div.loading-invisible{
+    display:none;
+  }
+/*class for visible divs*/
+  div.loading-visible{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;
+    text-align:center;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!--div to appear when loading is complete. Probably will call first scene-->
+<div id="play" class="loading-invisible">
+  <p>Play Game Now</p>
+</div>
+<!--Loading gif begins as visible-->
+<div id="loading" class="loading-visible">
+  <p><img src="loader-icon.gif" alt="Loading..."/></p>
+</div>
+
+<script type="text/javascript">
+<!--when load is complete, fade out loading gif and display first scene-->
+$(document).ready(function(){
+    $(window).load(function() {$("#loading").fadeOut('fast'); 
+							   $('#play').attr({class:'loading-visible'});
+					})
+});
+</script>
+</body>
+</html>
