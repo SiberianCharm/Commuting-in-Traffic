@@ -14,6 +14,13 @@ HHH.OptionClick = function(){
 	HHH.PopulatePage(nextQuestionID);
 }
 
+HHH.WireUpDialog = function(){
+	$( "#dialog" ).dialog({
+		 autoOpen: false,
+		 width: "900px"
+			});
+		
+}
 
 HHH.GetData = function(){
 	$.ajax({
@@ -57,9 +64,9 @@ HHH.MouseOverMenu = function(){
 
 
 HHH.PopulatePage = function(questionID){
+	HHH.WireUpDialog();
 	HHH.LoadQuestion(questionID);
 	HHH.LoadOptions(questionID);
-	HHH.LoadFact(questionID);
 }
 
 
@@ -69,7 +76,9 @@ HHH.LoadQuestion = function(questionID){
 	.select();
 	$("#question").html('<div class="inside clearfix"><p class="large heading">' + question[0].question_heading + '</p><p>' + question[0].question_content + '</p></div><div class="options"></div>');
 	var location = question[0].question_location;
+	var fact = question[0].question_fact;
 	HHH.setIcon(location);
+	HHH.LoadFact(fact);
 	//HHH.setProgress(location);
 }
 
@@ -94,13 +103,22 @@ HHH.LoadOptions = function(questionID){
 	}
 }
 
-HHH.LoadFact = function(questionID){
+HHH.LoadFact = function(factID){
 	var fact = jlinq.from(HHH.Data.facts)
-	.equals("fact_question", questionID)
+	.equals("ID", factID)
 	.select();
 	console.log(fact[0].fact_did_you_know_short);
-	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short + ' <a class="button heading" href="#">Learn more</a>';
+	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short + ' <button class="button heading" id="show_modal">Learn more</button>';
 	$("#fact_image").attr("src", fact[0].fact_thumbnail);
+	console.log(fact[0].fact_anecdote_header, fact[0].fact_anecdote)
+	$("#fact_anectdote_header").html(fact[0].fact_anecdote_header);
+	$("#fact_anectdote_header").next("p").html(fact[0].fact_anecdote);
+	$("#fact_image_learnmore").next("p").val(fact[0].fact_did_you_know_long);
+	$("#fact_image_learnmore").attr("src", fact[0].fact_image);
+	$(".heading.learn_more").html(fact[0].fact_did_you_know_short);
+	$( "#show_modal" ).live("click", function() {
+		$( "#dialog" ).dialog( "open" );
+		});
 }
 
 //Google Analytics tracking
