@@ -99,7 +99,7 @@ HHH.LoadFact = function(questionID){
 	.equals("fact_question", questionID)
 	.select();
 	console.log(fact[0].fact_did_you_know_short);
-	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short;
+	$("#fact").children("div").children()[2].innerHTML= fact[0].fact_did_you_know_short + ' <a class="button heading" href="#">Learn more</a>';
 	$("#fact_image").attr("src", fact[0].fact_thumbnail);
 }
 

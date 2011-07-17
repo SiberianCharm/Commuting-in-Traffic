@@ -112,18 +112,23 @@ body	{  }
 
 /* 	Header & Nav
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-header{ position: fixed; top: 0; height: 40px; line-height: 40px; width: 100%; background: #E6E6E6; color: #000; margin:0; }
+header{ position: fixed; width: 100%; background: #000; color: #333b3e; bottom: 0; height: 45px; line-height: 45px; font-size: 1.3em; border-top: 1px solid #222; margin:0; }
 header h1{ width: 30%; margin:0 3% 0 0; font-size: 1.2em; float: left; text-indent: 10px; }
-header nav{ width: 30%; margin-right: 3%; float: left; text-align: center; }
+header nav{ width: 30%; float: left; text-align: right; margin-right: 10px;  }
 header nav li{ display: inline-block; width: 15%; }
 header #user{ width: 33%; float: left; text-align: right;  }
 
-#q1 header #icon1{ background: url('../images/icon1-sm.jpg')}
-#q2 header #icon2{ background: url('../images/icon2-sm.jpg')}
-#q3 header #icon3{ background: url('../images/icon3-sm.jpg')}
-#q4 header #icon4{ background: url('../images/icon4-sm.jpg')}
-#q5 header #icon5{ background: url('../images/icon5-sm.jpg')}
-#q6 header #icon6{ background: url('../images/icon6-sm.jpg')}
+header div{ width: 980px; margin: 0 auto; }
+header nav {float: right; }
+header nav ul li{ background: #111; line-height:30px; width: 30px; }
+
+.icon-off{ background: url('../images/icon-off.gif'); }
+header #icon1.icon-on{ background: url('../images/icon1-sm.gif')}
+header #icon2.icon-on{ background: url('../images/icon2-sm.gif')}
+header #icon3.icon-on{ background: url('../images/icon3-sm.gif')}
+header #icon4.icon-on{ background: url('../images/icon4-sm.gif')}
+header #icon5.icon-on{ background: url('../images/icon5-sm.gif')}
+header #icon6.icon-on{ background: url('../images/icon6-sm.gif')}
 
 /* 	Container
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -146,8 +151,8 @@ header #user{ width: 33%; float: left; text-align: right;  }
 #fact .inside{ margin: 0 20px; }
 #fact h2{ color: #D4145A; line-height: 60px; }
 #fact img{ max-width: 33%; margin-left: 1%; float: right;}
-
-
+#fact .button.heading{ font-size: 1.2em; margin-bottom: 20px; padding-top: 18px; width: 180px; text-shadow: 1px 0 0 rgba(0,0,0,.3)}
+#fact .button.heading:hover{ color: #fff; }
 
 /* 	Footer
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -157,19 +162,52 @@ footer small{ display: none; }
 
 /* 	Landing
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*class for invisible divs*/
+  div.loading-invisible{
+    display:none;
+  }
+/*class for visible divs*/
+  div.loading-visible{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;
+    text-align:center;
+  }
 
 /*#landing #container{ background: url("../images/loading2.gif") center center no-repeat; }*/
+
+
+/******** Learn More ********/
+
+#learnmorecopy { background: #fff; font-size:14px; padding:20px; display: block; float: left; 	width: 62%; margin-right: 1%; float: left;  }
+#learnmorecontainer { background: #fff; height:100%; overflow:hidden; padding:10px; }
+#backtogame { margin-top:20px; width: 46%}
+
+/* Anectdote */
+#anectdote{ background: #fff; height: 100%; margin-bottom:20px;}
+#anectdote p{ margin-left: 2%; font-size:14px; }
+#fact_anectdote_header { line-height:1em; margin-bottom: 10px; color: #00A7A4; padding-left:5px;}
+#anectdote .options{ position:absolute; bottom: 0; width: 100%; margin: 0 0px 20px -10px;}
+#anectdote .border { border: 3px solid #00A7A4; padding:10px; 
+/* safari and chrome*/
+border-radius: 20px;
+/* firefox */
+-moz-border-radius: 20px; }
+
+.socialmedialinks {text-align:center; margin-top:10px;}
+
 
 
 /* 	LATE NIGHT CHANGES
 ---------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 #container{ margin-top: 60px; }
-header{ background: #000; color: #333b3e; bottom: 0; top: auto; height: 45px; line-height: 45px; font-size: 1.3em; border-top: 1px solid #222; }
-header div{ width: 980px; margin: 0 auto; }
-header nav {float: right; }
-header nav ul { font: .5em/45px georgia !important;}
-header nav ul li{ background: #111; -webkit-border-radius: 25px; line-height: 25px; width: 25px; }
+
 header #user{ display; }
 body{ background: url(../images/base-2.jpg) center -40px no-repeat; min-height: 700px; /*max-width: 1300px;*/ padding-top: 0px;}
 
